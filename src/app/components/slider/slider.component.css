@@ -1,0 +1,33 @@
+#slider-domain {
+    position: relative;
+    min-height: 500px;
+}
+.single-item {
+    width: 100%;
+    height: 500px;
+    background-position: center center;
+    -webkit-background-size: cover;
+    background-size: cover;
+    color: #FFF;
+    text-align: center;
+}
+.navigation {
+    position: absolute;
+    top: 50%;
+    width: 40px;
+    height: 52px;
+    margin-top: -25px;
+    text-align: center;
+    background: rgba(0,0,0,0.7);
+    color: whitesmoke;
+}
+.navigation:hover {
+    cursor: pointer;
+}
+.navigation-arrow-left {
+    left: 0;
+}
+
+.navigation-arrow-right {
+    right: 0;
+}

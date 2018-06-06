@@ -1,0 +1,6 @@
+{
+  "/api": {
+    "target": "http://api-jevargas.cochise.com.br:80",
+    "secure": false
+  }
+}

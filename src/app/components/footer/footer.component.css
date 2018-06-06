@@ -1,0 +1,25 @@
+footer {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: #2D3E4D;
+  position: fixed;
+  bottom: 0;
+  width: inherit;
+  z-index: 9999;
+}
+
+#footerWrapper {
+  width: 100%
+}
+
+#footerBrand {
+  max-height: 35px;
+}
+
+
+#footerList li {
+  color: #FFF;
+  text-transform: uppercase;
+  list-style-type: none;
+  font-style: 1.2em;
+}

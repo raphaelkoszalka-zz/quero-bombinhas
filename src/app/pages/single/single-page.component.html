@@ -1,0 +1,52 @@
+<section id="single-estate-wrapper">
+
+  <div id="cover" [ngStyle]="{'background-image' : 'url(' + mediaUrl + estate['meta']['foto_url'] +')'}"></div>
+
+  <div class="col-md-10 col-md-offset-1">
+    <div class="panel">
+      <div class="panel-body">
+
+        <h2>Galeria de Imagens</h2>
+        <hr>
+        <app-gallery [pictures]="estate['fotos']"></app-gallery>
+
+        <h2>Descrição do imóvel</h2>
+        <hr>
+        <span style="font-size: 1.2em;" [innerHTML]="parseAndSanitizeHTML(estate['meta']['imovel_descricao'])"></span>
+
+        <h2>Localização do imóvel</h2>
+        <hr>
+        <app-map [lat]="estate['meta']['imovel_lat']" [lng]="estate['meta']['imovel_lon']"></app-map>
+
+        <h2>Entre em contato!</h2>
+        <hr>
+        <form>
+          <input type="text" class="form-control" placeholder="Nome" name="name"  [(ngModel)]="name" required/>
+          <hr>
+          <input type="text" class="form-control" name="subject" [(ngModel)]="subject" />
+          <hr>
+          <div class="row">
+            <div class="col-md-8">
+              <input type="text" class="form-control" placeholder="E-mail" name="email" [(ngModel)]="email"  required/>
+            </div>
+            <div class="col-md-4">
+              <input type="text" class="form-control" placeholder="Telefone" name="phone" [(ngModel)]="phone" required />
+            </div>
+          </div>
+          <hr>
+          <textarea name="message" class="form-control" id="" cols="30" rows="10" [(ngModel)]="message" required></textarea>
+          <hr>
+          <div class="text-right">
+            <button class="btn btn-send" (click)="sendMail()" >Enviar</button>
+          </div>
+        </form>
+        <div class="clearfix"></div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="clearfix"></div>
+  <hr>
+
+</section>

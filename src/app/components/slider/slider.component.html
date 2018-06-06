@@ -1,0 +1,17 @@
+<section id="slider-domain" *ngIf="ready">
+    <div class="slider-wrapper" *ngFor="let slider of slides">
+        <div
+                class="single-item"
+                *ngIf="slider['slide_id'] === current['slider']['slide_id']"
+                [@enterAnimation]
+                [ngStyle]="{'background-image' : 'url(' + constants.MEDIA_SLIDER + slider.slide_foto +')'}"
+        >
+        </div>
+    </div>
+    <div class="navigation navigation-arrow-left" (click)="navigate('previous')">
+        <i class="fa fa-4x fa-caret-left" aria-hidden="true"></i>
+    </div>
+    <div class="navigation navigation-arrow-right" (click)="navigate('next')">
+        <i class="fa fa-4x fa-caret-right" aria-hidden="true"></i>
+    </div>
+</section>

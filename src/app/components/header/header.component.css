@@ -1,0 +1,68 @@
+.navbar {
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    border-radius: 0 !important;
+    background-color: #2D3E4D;
+    border-bottom: none;
+    height: 60px;
+    position: fixed;
+    width: inherit;
+}
+.navbar-nav > li > a {
+    color: #efefef;
+    line-height: 38px;
+    text-transform: uppercase;
+}
+.navbar-nav > li > a:hover {
+    background-color: #2E62B8;
+    color: #efefef;
+}
+.navbar-brand img {
+    height: 40px;
+}
+.navbar-brand {
+    background-color: #2E62B8;
+    height: 60px;
+}
+
+.desktop-bar {
+    margin-top: 25px;
+}
+.desktop-logo {
+    height: 80px;
+    margin-left: -15px;
+}
+.desktop-menu {
+    background-color: #373435;
+    height: 45px;
+    width: 100%;
+    margin-top: 15px;
+}
+.desktop-items {
+    line-height: 45px;
+    margin-left: 0px;
+    padding-left: 0px;
+}
+.desktop-items li {
+    display: inline-block;
+}
+.desktop-items li a{
+    display: inline-block;
+    list-style-type: none;
+    text-transform: uppercase;
+    color: #FFF !important;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.desktop-items li a:hover {
+    cursor: pointer;
+    background-color: #2E62B8;
+}
+#codeInput {
+    height: 30px;
+    margin-top: 7px;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    border: 1px solid #211f1f;
+}

@@ -1,0 +1,19 @@
+<div id="gallery-wrapper" *ngIf="showBig">
+  <div class="row text-center big-image-wrapper" id="imageWrapper">
+    <div class="image-loader-wrapper">
+      <div class="gallery-loader"></div>
+    </div>
+    <img [src]="current['url']" (load)="imageLoader('10')" alt="" id="currentImage">
+    <div class="previous-button" (click)="navigate('previous')"></div>
+    <div class="next-button" (click)="navigate('next')"></div>
+  </div>
+  <div class="row text-center">
+    <hr>
+    <img
+      *ngFor="let item of pictures"
+      class="gallery-thumbnail"
+      src="{{item['url']}}"
+      (click)="openPic(item)"
+    >
+  </div>
+</div>
