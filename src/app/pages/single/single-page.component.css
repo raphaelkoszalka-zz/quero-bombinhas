@@ -4,11 +4,21 @@ section {
 
 #cover {
   width: 100%;
-  height: 100%;
-  background-color: #efefef;
+  height: 450px;
   background-position: center center;
+  /*background-attachment: fixed;*/
+  background-color: #efefef;
   -webkit-background-size: cover;
   background-size: cover !important;
   z-index: 500;
-  margin-bottom: 75px;
+  margin-bottom: 35px;
+  margin-top: -1px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  text-transform: uppercase;
+  color: #fa8231;
 }

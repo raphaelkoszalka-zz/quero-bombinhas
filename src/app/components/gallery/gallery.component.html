@@ -4,8 +4,12 @@
       <div class="gallery-loader"></div>
     </div>
     <img [src]="current['url']" (load)="imageLoader('10')" alt="" id="currentImage">
-    <div class="previous-button" (click)="navigate('previous')"></div>
-    <div class="next-button" (click)="navigate('next')"></div>
+    <div class="previous-button" (click)="navigate('previous')">
+      <i class="fas fa-caret-right"></i>
+    </div>
+    <div class="next-button" (click)="navigate('next')">
+      <i class="fas fa-caret-right"></i>
+    </div>
   </div>
   <div class="row text-center">
     <hr>

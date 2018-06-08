@@ -1,0 +1,45 @@
+body, html {
+  width: 100%;
+  height: 100%;
+  background-color: #d7d7d7;
+  background: url("https://www.toptal.com/designers/subtlepatterns/patterns/subtle_stripes.png");
+}
+
+a:hover, a:visited, a:active, a:link {
+  text-decoration: none !important;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: 'Neucha', cursive !important;
+  font-weight: bold !important;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+  background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #fa8231;
+}
+
+::-moz-selection {
+  background:#fa8231;
+  color: whitesmoke;
+}
+::selection {
+  background:#fa8231;
+  color: whitesmoke;
+}
+
+[app-root] {
+  height: 100%;
+}
+
+
+

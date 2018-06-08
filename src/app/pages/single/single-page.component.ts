@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { AppConstants } from '../../app.constants';
 import { BroadcasterService } from '../../services/broadcaster.service';
 import { LoggerService } from '../../services/logger.service';
@@ -12,7 +12,7 @@ import {DomSanitizer, SafeHtml} from "@angular/platform-browser";
   styleUrls: ['./single-page.component.css']
 })
 
-export class SinglePageComponent  {
+export class SinglePageComponent implements OnInit {
 
   public estate: object;
   public mediaUrl: string = AppConstants.MEDIA_PHOTOS;
@@ -21,6 +21,8 @@ export class SinglePageComponent  {
   public message: string;
   public email: string;
   public phone: string;
+  public isLoading: boolean = true;
+
 
   constructor(private logger: LoggerService, private http: HttpService, private broadcaster: BroadcasterService,
     private route: ActivatedRoute, private sanitizer: DomSanitizer) {
@@ -30,8 +32,15 @@ export class SinglePageComponent  {
 
   }
 
+  ngOnInit() {
+    setTimeout( () => this.isLoading = false, 300);
+  }
+
   public parseAndSanitizeHTML(html: string): SafeHtml {
     html = html.replace(/\\r\\n\\r\\n/g, '<br/>');
     return this.sanitizer.bypassSecurityTrustHtml(html);
   }
+
+
+
 }

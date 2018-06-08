@@ -1,24 +1,37 @@
+<div class="loader-wrapper" *ngIf="isLoading">
+  <div class="loader"></div>
+</div>
+
+<div class="clearfix"></div>
+<div style="padding-top: 60px;"></div>
+
 <section id="single-estate-wrapper">
 
   <div id="cover" [ngStyle]="{'background-image' : 'url(' + mediaUrl + estate['meta']['foto_url'] +')'}"></div>
 
   <div class="col-md-10 col-md-offset-1">
-    <div class="panel">
+    <div class="panel shadow-top-bottom">
+
       <div class="panel-body">
-
-        <h2>Galeria de Imagens</h2>
-        <hr>
-        <app-gallery [pictures]="estate['fotos']"></app-gallery>
-
-        <h2>Descrição do imóvel</h2>
+        <h2><i class="fas fa-file-alt"></i> Descrição do imóvel</h2>
         <hr>
         <span style="font-size: 1.2em;" [innerHTML]="parseAndSanitizeHTML(estate['meta']['imovel_descricao'])"></span>
 
-        <h2>Localização do imóvel</h2>
+        <div class="clearfix"></div>
+        <div style="padding-top: 75px;"></div>
+
+        <h2><i class="far fa-images"></i> Galeria de Imagens</h2>
+        <hr>
+        <app-gallery [pictures]="estate['fotos']"></app-gallery>
+
+        <h2><i class="fas fa-map-marker-alt"></i> Localização do imóvel</h2>
         <hr>
         <app-map [lat]="estate['meta']['imovel_lat']" [lng]="estate['meta']['imovel_lon']"></app-map>
 
-        <h2>Entre em contato!</h2>
+        <div class="clearfix"></div>
+        <div style="padding-top: 75px;"></div>
+
+        <h2><i class="fas fa-envelope"></i> Entre em contato!</h2>
         <hr>
         <form>
           <input type="text" class="form-control" placeholder="Nome" name="name"  [(ngModel)]="name" required/>
@@ -47,6 +60,5 @@
   </div>
 
   <div class="clearfix"></div>
-  <hr>
 
 </section>

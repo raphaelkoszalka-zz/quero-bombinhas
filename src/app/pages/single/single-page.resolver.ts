@@ -13,7 +13,7 @@ export class SinglePageResolver implements Resolve<any> {
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Array<object>>  {
     return Observable.create((observer: Observer<any>) => {
-      this.http.get(AppConstants.MOCK_SINGLE)
+      this.http.get(AppConstants.ENDPOINT_ESTATE_PAGE + route['params']['id'])
         .subscribe(
           (res) => { observer.next(res); observer.complete(); },
           (err) => { throw new Error(err); }

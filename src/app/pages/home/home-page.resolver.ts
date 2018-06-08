@@ -13,7 +13,7 @@ export class HomePageResolver implements Resolve<any> {
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Array<object>>  {
     return Observable.create((observer: Observer<any>) => {
-      this.http.get(AppConstants.MOCK_HOME)
+      this.http.get(AppConstants.ENDPOINT_RENT_PAGE)
         .subscribe(
           (res) => { observer.next(res); observer.complete(); },
           (err) => { throw new Error(err); }

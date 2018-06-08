@@ -10,10 +10,10 @@ import {ActivatedRoute} from "@angular/router";
   styleUrls: ['./home-page.component.css']
 })
 
-export class HomePageComponent {
+export class HomePageComponent implements OnInit {
 
-  private indexData: object;
-  private ready: boolean = false;
+  public indexData: object;
+  public isLoading: boolean = true;
 
   constructor(
     private logger: LoggerService,
@@ -22,8 +22,10 @@ export class HomePageComponent {
     private route: ActivatedRoute) {
 
     this.indexData = route['data']['_value']['content'];
-    console.log(this.indexData);
   }
 
+  ngOnInit() {
+    setTimeout( () => this.isLoading = false, 300);
+  }
 
 }

@@ -1,58 +1,27 @@
+<div class="loader-wrapper" *ngIf="isLoading">
+  <div class="loader"></div>
+</div>
+
 <section>
 
   <div id="cover"></div>
 
-  <div class="col-md-10">
-    <hr>
-  </div>
+  <div class="clearfix"></div>
+  <div style="padding-top: 75px;"></div>
 
   <div class="col-md-10 col-md-offset-1">
-    <h2 class="text-uppercase"><strong>Destaques</strong></h2>
-    <hr>
     <div class="row">
-      <div class="col-md-3" *ngFor="let imovel of indexData['imovel_destaque']">
-        <app-card [estate]="imovel"></app-card>
+      <div class="col-md-3" *ngFor="let estate of indexData">
+        <app-card [estate]="estate"></app-card>
       </div>
     </div>
   </div>
 
-  <div class="col-md-10 col-md-offset-1">
-    <h2 class="text-uppercase"><strong>Investimento</strong></h2>
-    <hr>
-    <div class="row">
-      <div class="col-md-3" *ngFor="let imovel of indexData['imovel_vende']">
-        <app-card [estate]="imovel"></app-card>
-      </div>
-    </div>
-  </div>
 
   <div class="col-md-10 col-md-offset-1">
-    <h2 class="text-uppercase"><strong>Locação</strong></h2>
-    <hr>
-    <div class="row">
-      <div class="col-md-3" *ngFor="let imovel of indexData['imovel_aluga']">
-        <app-card [estate]="imovel"></app-card>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-md-10">
     <hr>
   </div>
 
 </section>
 
 
-<!--<section id="home-wrapper" *ngIf="ready">-->
-<!--<app-slider [slides]="indexData['slide']"></app-slider>-->
-<!--<div class="container">-->
-<!--<div class="col-md-12">-->
-<!--<hr>-->
-<!--<h2><strong>Imóveis:</strong></h2>-->
-<!--<hr>-->
-<!--</div>-->
-<!--<div class="col-md-4" *ngFor="let item of indexData">-->
-<!--<app-card [estate]="item"></app-card>-->
-<!--</div>-->
-<!--</div>-->
-<!--</section>-->

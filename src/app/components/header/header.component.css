@@ -1,68 +1,111 @@
 .navbar {
-    -webkit-border-radius: 0 !important;
-    -moz-border-radius: 0 !important;
-    border-radius: 0 !important;
-    background-color: #2D3E4D;
-    border-bottom: none;
-    height: 60px;
-    position: fixed;
-    width: inherit;
+  -webkit-border-radius: 0 !important;
+  -moz-border-radius: 0 !important;
+  border-radius: 0 !important;
+  background-color: #4b6584;
+  border-bottom: none;
+  height: 60px;
+  position: fixed;
+  width: inherit;
+  -webkit-box-shadow: 0 5px 3px -3px #777;
+  -moz-box-shadow: 0 5px 3px -3px #777;
+  box-shadow: 0 5px 3px -3px #777;
 }
 .navbar-nav > li > a {
-    color: #efefef;
-    line-height: 38px;
-    text-transform: uppercase;
+  color: #efefef;
+  line-height: 38px;
+  text-transform: uppercase;
 }
 .navbar-nav > li > a:hover {
-    background-color: #2E62B8;
-    color: #efefef;
+  background-color: #fa8231;
+  color: #efefef;
 }
 .navbar-brand img {
-    height: 40px;
+  height: 40px;
 }
 .navbar-brand {
-    background-color: #2E62B8;
-    height: 60px;
+  background-color: #fa8231;
+  height: 60px;
+  padding-top: 21px;
 }
-
 .desktop-bar {
-    margin-top: 25px;
+  margin-top: 25px;
 }
 .desktop-logo {
-    height: 80px;
-    margin-left: -15px;
+  height: 80px;
+  margin-left: -15px;
 }
 .desktop-menu {
-    background-color: #373435;
-    height: 45px;
-    width: 100%;
-    margin-top: 15px;
+  background-color: #373435;
+  height: 45px;
+  width: 100%;
+  margin-top: 15px;
 }
 .desktop-items {
-    line-height: 45px;
-    margin-left: 0px;
-    padding-left: 0px;
+  line-height: 45px;
+  margin-left: 0px;
+  padding-left: 0px;
 }
 .desktop-items li {
-    display: inline-block;
+  display: inline-block;
 }
 .desktop-items li a{
-    display: inline-block;
-    list-style-type: none;
-    text-transform: uppercase;
-    color: #FFF !important;
-    padding-left: 15px;
-    padding-right: 15px;
+  display: inline-block;
+  list-style-type: none;
+  text-transform: uppercase;
+  color: #FFF !important;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 .desktop-items li a:hover {
-    cursor: pointer;
-    background-color: #2E62B8;
+  cursor: pointer;
+  background-color: #2E62B8;
 }
 #codeInput {
-    height: 30px;
-    margin-top: 7px;
-    -webkit-border-radius: 0;
-    -moz-border-radius: 0;
-    border-radius: 0;
-    border: 1px solid #211f1f;
+  height: 30px;
+  margin-top: 7px;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  border: 1px solid #211f1f;
+}
+#brandText {
+  color: #FFF !important;
+  font-family: 'Neucha', cursive;
+  font-size: 1.2em;
+}
+
+.shadow-bottom-skew
+{
+  position: relative;
+}
+.shadow-bottom-skew:before, .shadow-bottom-skew:after
+{
+  z-index: -1;
+  position: absolute;
+  content: "";
+  bottom: 15px;
+  left: 10px;
+  width: 50%;
+  top: 80%;
+  max-width:300px;
+  background: #777;
+  -webkit-box-shadow: 0 15px 10px #777;
+  -moz-box-shadow: 0 15px 10px #777;
+  box-shadow: 0 15px 10px #777;
+  -webkit-transform: rotate(-3deg);
+  -moz-transform: rotate(-3deg);
+  -o-transform: rotate(-3deg);
+  -ms-transform: rotate(-3deg);
+  transform: rotate(-3deg);
+}
+.shadow-bottom-skew:after
+{
+  -webkit-transform: rotate(3deg);
+  -moz-transform: rotate(3deg);
+  -o-transform: rotate(3deg);
+  -ms-transform: rotate(3deg);
+  transform: rotate(3deg);
+  right: 10px;
+  left: auto;
 }

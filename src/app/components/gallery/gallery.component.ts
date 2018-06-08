@@ -23,9 +23,7 @@ export class GalleryComponent implements OnInit {
       pic.url = AppConstants.MEDIA_PHOTOS + pic['foto_url'];
       i++;
     }
-
     this.current = this.pictures[0];
-
     this.registerKeyPress();
   }
 

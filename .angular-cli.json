@@ -13,13 +13,14 @@
       ],
       "index": "index.html",
       "main": "main.ts",
-      "polyfills": "polyfills.ts",
-      "test": "test.ts",
+      "polyfills": "polyfills.ts",      "test": "test.ts",
       "tsconfig": "tsconfig.app.json",
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "styles.css"
+        "global-css/styles.css",
+        "global-css/loader.css",
+        "global-css/shadows.css"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",

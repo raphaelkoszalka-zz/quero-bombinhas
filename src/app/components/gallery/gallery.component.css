@@ -8,7 +8,7 @@
 .gallery-thumbnail {
   margin: 3px;
   height: 34px;
-  border: 1px solid #A6192E;
+  border: 1px solid #fa8231;
   padding: 0;
 }
 .gallery-thumbnail:hover {
@@ -40,7 +40,6 @@
   margin-top: -8px;
   width: 18px;
   height: 27px;
-  background-image: url(../../../assets/left.png);
   z-index:11;
 }
 .previous-button:hover {
@@ -54,7 +53,6 @@
   margin-top: -8px;
   width: 18px;
   height: 27px;
-  background-image: url(../../../assets/right.png);
   z-index:11;
 }
 .next-button:hover {
@@ -91,10 +89,10 @@
   font-size: 10px;
   position: relative;
   text-indent: -9999em;
-  border-top: 1.1em solid rgba(255,184,28, 0.2);
-  border-right: 1.1em solid rgba(255,184,28, 0.2);
-  border-bottom: 1.1em solid rgba(255,184,28, 0.2);
-  border-left: 1.1em solid #A6192E;
+  border-top: 1.1em solid rgba(250,130,49, 0.2);
+  border-right: 1.1em solid rgba(250,130,49, 0.2);
+  border-bottom: 1.1em solid rgba(250,130,49, 0.2);
+  border-left: 1.1em solid #fa8231;
   -webkit-transform: translateZ(0);
   -ms-transform: translateZ(0);
   transform: translateZ(0);

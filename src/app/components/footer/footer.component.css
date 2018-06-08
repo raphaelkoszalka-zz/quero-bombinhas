@@ -1,11 +1,12 @@
 footer {
   padding-top: 5px;
   padding-bottom: 5px;
-  background-color: #2D3E4D;
+  background-color: #4b6584;
+  z-index: 9999;
   position: fixed;
   bottom: 0;
   width: inherit;
-  z-index: 9999;
+  border-top: 2px solid #435a76;
 }
 
 #footerWrapper {
@@ -16,10 +17,21 @@ footer {
   max-height: 35px;
 }
 
+h1,h2,h3,h4,h5,h6 {
+  color: #FFF !important;
+}
+
+#footerAbout {
+  width: 100%;
+  background-color: #5d7490;
+  padding-bottom: 15px;
+  border-top: 2px solid #4b6584;
+  margin-bottom: 45px;
+}
 
 #footerList li {
   color: #FFF;
   text-transform: uppercase;
   list-style-type: none;
-  font-style: 1.2em;
+  font-size: 1.2em;
 }
