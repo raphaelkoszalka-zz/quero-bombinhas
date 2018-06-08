@@ -11,7 +11,7 @@
                     <div class="col-xs-3 text-center card-icons-wrapper">
                         <img src="./assets/icons/bed-profile.svg" class="card-icon" alt="">
                         <br />
-                        <p>{{estate['imovel_dormitorio']}}</p>
+                        <p [innerHTML]="sumBedrooms(estate['imovel_dormitorio'], estate['imovel_suite'])"></p>
                     </div>
                     <div class="col-xs-3 text-center card-icons-wrapper">
                         <img src="./assets/icons/big-house-with-car-garage.svg" class="card-icon" alt="">

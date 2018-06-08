@@ -7,6 +7,10 @@ import { Component } from '@angular/core';
 })
 export class ContactPageComponent {
 
+  public address: string;
+  public contactDetail: string;
+  public socialNetwork: string;
+
   constructor() { }
 
 

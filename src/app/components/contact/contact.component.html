@@ -1,3 +1,29 @@
-<p>
-  contact works!
-</p>
+<form>
+
+  <input type="text" class="form-control" placeholder="Nome" name="name"  [(ngModel)]="name" required/>
+
+  <hr>
+
+  <input type="text" class="form-control" placeholder="Assunto" [value]="subject" name="subject" [(ngModel)]="subject" disabled />
+
+  <hr>
+
+  <div class="row">
+    <div class="col-md-8">
+      <input type="text" class="form-control" placeholder="E-mail" name="email" [(ngModel)]="email"  required/>
+    </div>
+    <div class="col-md-4">
+      <input type="text" class="form-control" placeholder="Telefone" name="phone" [(ngModel)]="phone" required />
+    </div>
+  </div>
+
+  <hr>
+
+  <textarea name="message" class="form-control" id="" cols="30" rows="10" [(ngModel)]="message" required>
+
+  </textarea>
+  <hr>
+  <div class="text-right">
+    <button class="btn btn-send" (click)="sendMail()" >Enviar</button>
+  </div>
+</form>

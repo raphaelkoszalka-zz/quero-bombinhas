@@ -10,8 +10,28 @@ a:hover, a:visited, a:active, a:link {
 }
 
 h1,h2,h3,h4,h5,h6 {
-  font-family: 'Neucha', cursive !important;
+  font-family: 'Neucha', cursive;
   font-weight: bold !important;
+}
+
+app-root {
+  height: 100%;
+}
+
+input, textarea {
+  border: 1px solid #4b6584 !important;
+  -webkit-border-radius: 0 !important;
+  -moz-border-radius: 0 !important;
+  border-radius: 0 !important;
+}
+
+button {
+  background-color: #4b6584 !important;
+  color: #FFF !important;
+  text-transform: uppercase !important;
+  -webkit-border-radius: 0 !important;
+  -moz-border-radius: 0 !important;
+  border-radius: 0 !important;
 }
 
 ::-webkit-scrollbar-track {
@@ -37,9 +57,15 @@ h1,h2,h3,h4,h5,h6 {
   color: whitesmoke;
 }
 
-[app-root] {
-  height: 100%;
+::placeholder {
+  color: #222 !important;
+  opacity: 1 !important;
 }
 
+:-ms-input-placeholder {
+  color: #222 !important;
+}
 
-
+::-ms-input-placeholder {
+  color: #222 !important;
+}

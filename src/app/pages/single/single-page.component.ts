@@ -16,19 +16,12 @@ export class SinglePageComponent implements OnInit {
 
   public estate: object;
   public mediaUrl: string = AppConstants.MEDIA_PHOTOS;
-  public name: string;
-  public subject: string;
-  public message: string;
-  public email: string;
-  public phone: string;
   public isLoading: boolean = true;
-
 
   constructor(private logger: LoggerService, private http: HttpService, private broadcaster: BroadcasterService,
     private route: ActivatedRoute, private sanitizer: DomSanitizer) {
 
     this.estate = route['data']['_value']['content'];
-    console.log(this.estate);
 
   }
 

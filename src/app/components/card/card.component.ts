@@ -20,13 +20,17 @@ export class CardComponent implements AfterViewInit {
 
   ngAfterViewInit() {
     const card = document.getElementById(this.cardID);
-    console.log(card);
     card.addEventListener('mouseover', function () {
       card.classList.add('shadow-left-right');
     });
     card.addEventListener('mouseleave', function () {
       card.classList.remove('shadow-left-right');
     });
+  }
+
+
+  public sumBedrooms(normal, suite): number {
+    return parseInt(normal, 10) + parseInt(suite, 10);
   }
 
 }

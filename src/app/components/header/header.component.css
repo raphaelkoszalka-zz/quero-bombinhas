@@ -7,9 +7,9 @@
   height: 60px;
   position: fixed;
   width: inherit;
-  -webkit-box-shadow: 0 5px 3px -3px #777;
-  -moz-box-shadow: 0 5px 3px -3px #777;
-  box-shadow: 0 5px 3px -3px #777;
+  -webkit-box-shadow: 0 3px 1px -1px #444;
+  -moz-box-shadow: 0 3px 1px -1px #444;
+  box-shadow: 0 3px 1px -1px #444;
 }
 .navbar-nav > li > a {
   color: #efefef;
@@ -73,39 +73,4 @@
   color: #FFF !important;
   font-family: 'Neucha', cursive;
   font-size: 1.2em;
-}
-
-.shadow-bottom-skew
-{
-  position: relative;
-}
-.shadow-bottom-skew:before, .shadow-bottom-skew:after
-{
-  z-index: -1;
-  position: absolute;
-  content: "";
-  bottom: 15px;
-  left: 10px;
-  width: 50%;
-  top: 80%;
-  max-width:300px;
-  background: #777;
-  -webkit-box-shadow: 0 15px 10px #777;
-  -moz-box-shadow: 0 15px 10px #777;
-  box-shadow: 0 15px 10px #777;
-  -webkit-transform: rotate(-3deg);
-  -moz-transform: rotate(-3deg);
-  -o-transform: rotate(-3deg);
-  -ms-transform: rotate(-3deg);
-  transform: rotate(-3deg);
-}
-.shadow-bottom-skew:after
-{
-  -webkit-transform: rotate(3deg);
-  -moz-transform: rotate(3deg);
-  -o-transform: rotate(3deg);
-  -ms-transform: rotate(3deg);
-  transform: rotate(3deg);
-  right: 10px;
-  left: auto;
 }

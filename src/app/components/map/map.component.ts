@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import {Component, Input, AfterViewInit} from '@angular/core';
 
 declare var google: any;
 
@@ -8,7 +8,7 @@ declare var google: any;
   styleUrls: ['./map.component.css']
 })
 
-export class MapComponent implements OnInit {
+export class MapComponent implements AfterViewInit {
 
   @Input()
   public lat: string;
@@ -18,11 +18,9 @@ export class MapComponent implements OnInit {
   public address: string;
 
   constructor() {
-    console.log(this.lat);
-    console.log(this.lng);
   }
 
-  ngOnInit() {
+  ngAfterViewInit() {
     this.renderMap();
   }
 

@@ -11,52 +11,49 @@
 
   <div class="col-md-10 col-md-offset-1">
     <div class="panel shadow-top-bottom">
-
       <div class="panel-body">
-        <h2><i class="fas fa-file-alt"></i> Descrição do imóvel</h2>
-        <hr>
-        <span style="font-size: 1.2em;" [innerHTML]="parseAndSanitizeHTML(estate['meta']['imovel_descricao'])"></span>
+        <div class="row">
 
-        <div class="clearfix"></div>
-        <div style="padding-top: 75px;"></div>
+          <div class="col-md-8">
+            <h1><i class="fas fa-file-alt"></i> Descrição do imóvel</h1>
+            <hr>
+            <span style="font-size: 1.2em;" [innerHTML]="parseAndSanitizeHTML(estate['meta']['imovel_descricao'])"></span>
 
-        <h2><i class="far fa-images"></i> Galeria de Imagens</h2>
-        <hr>
-        <app-gallery [pictures]="estate['fotos']"></app-gallery>
+            <div class="clearfix"></div>
+            <div style="padding-top: 75px;"></div>
 
-        <h2><i class="fas fa-map-marker-alt"></i> Localização do imóvel</h2>
-        <hr>
-        <app-map [lat]="estate['meta']['imovel_lat']" [lng]="estate['meta']['imovel_lon']"></app-map>
+            <h1><i class="far fa-images"></i> Fotos deste imóvel</h1>
+            <hr>
+            <app-gallery [pictures]="estate['fotos']"></app-gallery>
 
-        <div class="clearfix"></div>
-        <div style="padding-top: 75px;"></div>
+            <h1><i class="fas fa-map-marker-alt"></i> Localização do imóvel</h1>
+            <hr>
+            <app-map [lat]="estate['meta']['imovel_lat']" [lng]="estate['meta']['imovel_lon']"></app-map>
 
-        <h2><i class="fas fa-envelope"></i> Entre em contato!</h2>
-        <hr>
-        <form>
-          <input type="text" class="form-control" placeholder="Nome" name="name"  [(ngModel)]="name" required/>
-          <hr>
-          <input type="text" class="form-control" name="subject" [(ngModel)]="subject" />
-          <hr>
-          <div class="row">
-            <div class="col-md-8">
-              <input type="text" class="form-control" placeholder="E-mail" name="email" [(ngModel)]="email"  required/>
-            </div>
-            <div class="col-md-4">
-              <input type="text" class="form-control" placeholder="Telefone" name="phone" [(ngModel)]="phone" required />
+            <div class="clearfix"></div>
+            <div style="padding-top: 75px;"></div>
+
+            <h1><i class="fas fa-envelope"></i> Entre em contato!</h1>
+            <hr>
+            <app-contact estateCode="{{estate['meta']['imovel_ref']}}"></app-contact>
+            <div class="clearfix"></div>
+          </div>
+
+          <div class="col-md-4">
+            <h1><i class="fas fa-file-alt"></i> Imóveis similares</h1>
+            <hr>
+
+            <div class="row">
+              <div class="col-md-12" *ngFor="let similar of estate['parecido']">
+                <app-card [estate]="similar"></app-card>
+              </div>
             </div>
           </div>
-          <hr>
-          <textarea name="message" class="form-control" id="" cols="30" rows="10" [(ngModel)]="message" required></textarea>
-          <hr>
-          <div class="text-right">
-            <button class="btn btn-send" (click)="sendMail()" >Enviar</button>
-          </div>
-        </form>
-        <div class="clearfix"></div>
 
+        </div>
       </div>
     </div>
+
   </div>
 
   <div class="clearfix"></div>

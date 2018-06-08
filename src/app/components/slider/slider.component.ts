@@ -29,7 +29,7 @@ export class SliderComponent implements OnInit {
   @Input()
   private referer: string;
   private current: object;
-  private ready: boolean = false;
+  public ready: boolean = false;
   private constants: AppConstants;
 
   constructor(private logger: LoggerService) {
