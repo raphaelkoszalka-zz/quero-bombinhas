@@ -23,7 +23,7 @@ export class HomePageComponent implements OnInit {
 
   ngOnInit() {
     setTimeout( () => this.isLoading = false, 300);
-    this.broadcaster.on<string>('SCROLL_TO_ESTATE_LIST')
+    this.broadcaster.on<string>('SCROLL_TO_ELEMENT')
       .subscribe( (el) => this.scrollToElement(el));
   }
 

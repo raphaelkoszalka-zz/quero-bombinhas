@@ -68,6 +68,15 @@ h1,h2,h3,h4,h5 {
   font-size: 1.5em !important;
   margin-top: 0px;
 }
-#h1,h2,h3,h4,h5 {
+h1,h2,h3,h4,h5 {
   margin-top: 5px;
+}
+
+li:hover {
+  cursor: pointer;
+  font-weight: bold;
+  border-bottom: 10px solid #b7b7b7 !important;
+}
+#homeMenuFixed li:hover {
+  border-bottom: 5px solid #b7b7b7 !important;
 }
