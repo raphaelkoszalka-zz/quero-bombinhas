@@ -7,7 +7,8 @@
 
 <section id="single-estate-wrapper">
 
-  <div id="cover" [ngStyle]="{'background-image' : 'url(' + mediaUrl + estate['meta']['foto_url'] +')'}"></div>
+  <div class="clearfix"></div>
+  <div style="padding-top: 25px;"></div>
 
   <div class="col-md-10 col-md-offset-1">
     <div class="panel shadow-top-bottom">
@@ -15,18 +16,48 @@
         <div class="row">
 
           <div class="col-md-8">
-            <h1><i class="fas fa-file-alt"></i> Descrição do imóvel</h1>
+
+            <h1><i class="fas fa-barcode"></i> Imóvel código: {{estate['meta']['imovel_ref']}}</h1>
+            <!--<h2><i class="far fa-images"></i> Fotos</h2>-->
+            <hr>
+            <app-gallery [pictures]="estate['fotos']"></app-gallery>
+
+
+            <div class="clearfix"></div>
+            <div style="padding-top: 25px;"></div>
+
+            <!--<h2><i class="fas fa-file-alt"></i> Detalhes</h2>-->
+            <div class="col-xs-3 text-center card-icons-wrapper">
+              <img src="./assets/icons/bed-profile.svg" class="card-icon" alt="">
+              <br />
+              <strong> <h3 style="color: #435a76" [innerHTML]="'Quartos ' + sumBedrooms()"></h3></strong>
+            </div>
+            <div class="col-xs-3 text-center card-icons-wrapper">
+              <img src="./assets/icons/big-house-with-car-garage.svg" class="card-icon" alt="">
+              <br />
+              <strong> <h3 style="color: #435a76">Garagem: {{estate['meta']['imovel_vaga']}}</h3></strong>
+            </div>
+            <div class="col-xs-3 text-center card-icons-wrapper">
+              <img src="./assets/icons/bathroom-sink.svg" class="card-icon" alt="">
+              <br />
+              <strong> <h3 style="color: #435a76">Banheiros: {{estate['meta']['imovel_banheiro']}}</h3></strong>
+            </div>
+            <div class="col-xs-3 text-center card-icons-wrapper">
+              <img src="./assets/icons/home-construction.svg" class="card-icon" alt="">
+              <br />
+              <strong> <h3 style="color: #435a76">Área: {{estate['meta']['imovel_area']}} m2</h3></strong>
+            </div>
+
+
+            <div class="clearfix"></div>
+            <div style="padding-top: 75px;"></div>
+            <h2><i class="fas fa-file-alt"></i> Informações adicionais </h2>
             <hr>
             <span style="font-size: 1.2em;" [innerHTML]="parseAndSanitizeHTML(estate['meta']['imovel_descricao'])"></span>
 
             <div class="clearfix"></div>
             <div style="padding-top: 75px;"></div>
-
-            <h1><i class="far fa-images"></i> Fotos deste imóvel</h1>
-            <hr>
-            <app-gallery [pictures]="estate['fotos']"></app-gallery>
-
-            <h1><i class="fas fa-map-marker-alt"></i> Localização do imóvel</h1>
+            <h2><i class="fas fa-map-marker-alt"></i> Imóvel no mapa</h2>
             <hr>
             <app-map [lat]="estate['meta']['imovel_lat']" [lng]="estate['meta']['imovel_lon']"></app-map>
 

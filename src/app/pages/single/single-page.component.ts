@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import { AppConstants } from '../../app.constants';
 import { BroadcasterService } from '../../services/broadcaster.service';
 import { LoggerService } from '../../services/logger.service';
 import { HttpService } from '../../services/http.service';
@@ -15,13 +14,13 @@ import {DomSanitizer, SafeHtml} from "@angular/platform-browser";
 export class SinglePageComponent implements OnInit {
 
   public estate: object;
-  public mediaUrl: string = AppConstants.MEDIA_PHOTOS;
   public isLoading: boolean = true;
 
   constructor(private logger: LoggerService, private http: HttpService, private broadcaster: BroadcasterService,
     private route: ActivatedRoute, private sanitizer: DomSanitizer) {
 
     this.estate = route['data']['_value']['content'];
+    console.log(this.estate);
 
   }
 
@@ -32,6 +31,10 @@ export class SinglePageComponent implements OnInit {
   public parseAndSanitizeHTML(html: string): SafeHtml {
     html = html.replace(/\\r\\n\\r\\n/g, '<br/>');
     return this.sanitizer.bypassSecurityTrustHtml(html);
+  }
+
+  public sumBedrooms(): number {
+    return parseInt(this.estate['meta']['imovel_dormitorio'], 10) + parseInt(this.estate['meta']['imovel_suite'], 10);
   }
 
 

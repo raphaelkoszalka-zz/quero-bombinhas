@@ -2,15 +2,25 @@
   <div class="loader"></div>
 </div>
 
-<section>
+<section id="topOfTheWorld">
 
-  <div id="cover"></div>
+  <div id="cover">
+    <div class="col-md-10 col-md-offset-1">
+      <h1 id="homeMainTitle" (click)="scrollToElement('estatesRow')">
+        Aqui você encontra o imóvel
+        <br>
+        ideal para os seus dias em Bombinhas!
+        <br>
+        <strong>Quero!</strong>
+      </h1>
+    </div>
+  </div>
 
   <div class="clearfix"></div>
   <div style="padding-top: 75px;"></div>
 
   <div class="col-md-10 col-md-offset-1">
-    <div class="row">
+    <div class="row" id="estatesRow">
       <div class="col-md-3" *ngFor="let estate of indexData">
         <app-card [estate]="estate"></app-card>
       </div>

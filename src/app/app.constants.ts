@@ -7,7 +7,4 @@ export class AppConstants {
     public static ENDPOINT_INVESTMENT_PAGE: string = AppConstants.BASE_URL + '/venda/';
     public static ENDPOINT_ESTATE_PAGE: string = AppConstants.BASE_URL + '/estate/';
     public static ENDPOINT_ALL_ESTATE_PAGE: string = AppConstants.BASE_URL + '/principal/';
-
-    public static MOCK_HOME: string = './assets/mock-home.json';
-    public static MOCK_SINGLE: string = './assets/mock-single.json';
 }

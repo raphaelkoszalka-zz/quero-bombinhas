@@ -1,8 +1,7 @@
 body, html {
   width: 100%;
   height: 100%;
-  background-color: #d7d7d7;
-  background: url("https://www.toptal.com/designers/subtlepatterns/patterns/subtle_stripes.png");
+  background-color: #efefef;
 }
 
 a:hover, a:visited, a:active, a:link {
@@ -45,7 +44,7 @@ button {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #fa8231;
+  background-color: #242727;
 }
 
 ::-moz-selection {

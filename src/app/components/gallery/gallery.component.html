@@ -12,12 +12,14 @@
     </div>
   </div>
   <div class="row text-center">
-    <hr>
+    <div class="clearfix"></div>
+    <div style="padding-top: 25px;"></div>
     <img
       *ngFor="let item of pictures"
       class="gallery-thumbnail"
       src="{{item['url']}}"
       (click)="openPic(item)"
     >
+    <hr>
   </div>
 </div>

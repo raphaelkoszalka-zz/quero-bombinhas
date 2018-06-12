@@ -15,7 +15,7 @@ export class CardComponent implements AfterViewInit {
   public cardID: string;
 
   constructor() {
-    this.cardID = Math.random().toString()
+    this.cardID = Math.random().toString();
   }
 
   ngAfterViewInit() {
@@ -29,8 +29,8 @@ export class CardComponent implements AfterViewInit {
   }
 
 
-  public sumBedrooms(normal, suite): number {
-    return parseInt(normal, 10) + parseInt(suite, 10);
+  public sumBedrooms(): number {
+    return parseInt(this.estate['imovel_dormitorio'], 10) + parseInt(this.estate['imovel_suite'], 10);
   }
 
 }

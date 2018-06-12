@@ -15,10 +15,7 @@ export class HomePageComponent implements OnInit {
   public indexData: object;
   public isLoading: boolean = true;
 
-  constructor(
-    private logger: LoggerService,
-    private http: HttpService,
-    private broadcaster: BroadcasterService,
+  constructor(private logger: LoggerService, private http: HttpService, private broadcaster: BroadcasterService,
     private route: ActivatedRoute) {
 
     this.indexData = route['data']['_value']['content'];
@@ -26,6 +23,18 @@ export class HomePageComponent implements OnInit {
 
   ngOnInit() {
     setTimeout( () => this.isLoading = false, 300);
+    this.broadcaster.on<string>('SCROLL_TO_ESTATE_LIST')
+      .subscribe( (el) => this.scrollToElement(el));
+  }
+
+  public scrollToElement(el): void {
+
+    if (el === 'estatesRow') {
+      document.getElementById(el).style.paddingTop = '110px';
+    }
+
+    document.getElementById(el).scrollIntoView({ block: 'start', behavior: 'smooth' });
+
   }
 
 }

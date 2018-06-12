@@ -26,6 +26,7 @@ import { SinglePageResolver } from "./pages/single/single-page.resolver";
 import { MapComponent } from './components/map/map.component';
 import { ContactComponent } from './components/contact/contact.component';
 import {FormsModule} from "@angular/forms";
+import { HeaderHomeComponent } from './components/header-home/header-home.component';
 
 const routes: Routes = [
   {
@@ -66,7 +67,8 @@ const routes: Routes = [
     PageMapComponent,
     SearchComponent,
     MapComponent,
-    ContactComponent
+    ContactComponent,
+    HeaderHomeComponent
   ],
   imports: [
     BrowserModule,

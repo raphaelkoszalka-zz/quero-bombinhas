@@ -12,7 +12,7 @@ export class FooterComponent implements OnInit{
   constructor() { }
 
   ngOnInit() {
-    setTimeout( () => this.isReady = true, 1500);
+    setTimeout( () => this.isReady = true, 2500);
   }
 
 }

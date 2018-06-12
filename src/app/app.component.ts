@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
     selector: 'app-root',
     template: `
-        <app-header></app-header>
+        <app-header-home></app-header-home>
         <div class="clearfix"></div>
         <div style="padding-top: 90px;" class="visible-xs"></div>
         <router-outlet></router-outlet>

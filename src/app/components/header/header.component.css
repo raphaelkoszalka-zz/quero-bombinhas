@@ -28,6 +28,9 @@
   height: 60px;
   padding-top: 21px;
 }
+.navbar-brand img {
+  margin-top: -10px;
+}
 .desktop-bar {
   margin-top: 25px;
 }
