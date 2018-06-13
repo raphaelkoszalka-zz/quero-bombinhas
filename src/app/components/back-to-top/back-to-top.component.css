@@ -1,0 +1,10 @@
+#backToTop {
+  position: fixed;
+  bottom: 45px;
+  right: 45px;
+  background: rgba(52,56,56,0.7);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  z-index: 25000;
+}

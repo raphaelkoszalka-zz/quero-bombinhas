@@ -27,6 +27,7 @@ import { MapComponent } from './components/map/map.component';
 import { ContactComponent } from './components/contact/contact.component';
 import {FormsModule} from "@angular/forms";
 import { HeaderHomeComponent } from './components/header-home/header-home.component';
+import { BackToTopComponent } from './components/back-to-top/back-to-top.component';
 
 const routes: Routes = [
   {
@@ -68,7 +69,8 @@ const routes: Routes = [
     SearchComponent,
     MapComponent,
     ContactComponent,
-    HeaderHomeComponent
+    HeaderHomeComponent,
+    BackToTopComponent
   ],
   imports: [
     BrowserModule,

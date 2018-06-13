@@ -4,15 +4,17 @@
 
 <section id="topOfTheWorld">
 
-  <div id="cover">
-    <div class="col-md-10 col-md-offset-1">
-      <h1 id="homeMainTitle" (click)="scrollToElement('estatesRow')">
-        Aqui você encontra o imóvel
-        <br>
-        ideal para os seus dias em Bombinhas!
-        <br>
-        <strong>Quero!</strong>
-      </h1>
+  <div id="cover" [ngStyle]="backgroundStyles">
+    <div id="overlay">
+      <div class="col-md-10 col-md-offset-1">
+        <h1 id="homeMainTitle" (click)="scrollToElement('estatesRow')">
+          Aqui você encontra o imóvel
+          <br>
+          ideal para os seus dias em Bombinhas!
+          <br>
+          <strong>Quero!</strong>
+        </h1>
+      </div>
     </div>
   </div>
 

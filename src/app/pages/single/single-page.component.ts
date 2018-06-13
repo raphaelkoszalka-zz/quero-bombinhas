@@ -26,6 +26,7 @@ export class SinglePageComponent implements OnInit {
 
   ngOnInit() {
     setTimeout( () => this.isLoading = false, 300);
+    document.getElementById('homeHeader').style.background = 'rgba(2,2,2,0.7)';
   }
 
   public parseAndSanitizeHTML(html: string): SafeHtml {

@@ -1,4 +1,4 @@
-import {Component, HostListener, OnInit} from '@angular/core';
+import {Component, HostListener} from '@angular/core';
 import {FadeAnimation} from "../../app.animations";
 import {BroadcasterService} from "../../services/broadcaster.service";
 
@@ -8,7 +8,7 @@ import {BroadcasterService} from "../../services/broadcaster.service";
   styleUrls: ['./header-home.component.css'],
   animations: [FadeAnimation]
 })
-export class HeaderHomeComponent implements OnInit {
+export class HeaderHomeComponent  {
 
   public pageScrolled: boolean;
 
@@ -16,12 +16,8 @@ export class HeaderHomeComponent implements OnInit {
     this.pageScrolled = false;
   }
 
-  ngOnInit() {
-  }
-
   @HostListener('window:scroll', ['$event']) onScrollEvent($event) {
-    console.log(window.scrollY);
-    if (window.scrollY > 350) {
+    if (window.scrollY > 200) {
       this.pageScrolled = true;
       return;
     }
