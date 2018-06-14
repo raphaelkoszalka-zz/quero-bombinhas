@@ -1,4 +1,4 @@
-import {Component, HostListener} from '@angular/core';
+import {Component, OnInit, HostListener} from '@angular/core';
 import {FadeAnimation} from "../../app.animations";
 import {BroadcasterService} from "../../services/broadcaster.service";
 import {Router} from "@angular/router";
@@ -9,11 +9,11 @@ import {Router} from "@angular/router";
   styleUrls: ['./header-home.component.css'],
   animations: [FadeAnimation]
 })
-export class HeaderHomeComponent  {
+export class HeaderHomeComponent implements OnInit {
 
   public pageScrolled: boolean;
   // @todo: should be using Location service instead of this
-  private url: string = window.location.href;
+  private url: string;
 
   constructor(private broadcaster: BroadcasterService, private router: Router) {
     this.pageScrolled = false;
@@ -25,6 +25,10 @@ export class HeaderHomeComponent  {
       return;
     }
     this.pageScrolled = false;
+  }
+
+  ngOnInit() {
+    this.url = window.location.href;
   }
 
   private homeRoute(el: string): void {
@@ -44,6 +48,7 @@ export class HeaderHomeComponent  {
   }
 
   public scrollTo(el: string): void {
+    debugger;
     if (/home/.test(this.url)) {
       this.homeRoute(el);
       return;
