@@ -48,7 +48,8 @@ export class HeaderHomeComponent implements OnInit {
   }
 
   public scrollTo(el: string): void {
-    debugger;
+    // @todo: fix navigation
+    console.log(this.router);
     if (/home/.test(this.url)) {
       this.homeRoute(el);
       return;
