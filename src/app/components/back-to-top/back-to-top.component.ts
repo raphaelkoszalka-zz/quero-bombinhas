@@ -12,4 +12,8 @@ export class BackToTopComponent implements OnInit {
   ngOnInit() {
   }
 
+  public goToTop(): void {
+    document.getElementById('topOfTheWorld').scrollIntoView({ block: 'start', behavior: 'smooth' });
+  }
+
 }

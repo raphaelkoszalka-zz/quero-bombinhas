@@ -15,8 +15,9 @@ export class HomePageComponent implements OnInit {
   public indexData: object;
   public backgroundStyles: object;
   public isLoading: boolean;
+  private location: Location;
 
-  constructor(private logger: LoggerService, private http: HttpService,
+  constructor(private logger: LoggerService, private http: HttpService  ,
               private broadcaster: BroadcasterService, private route: ActivatedRoute) {
     this.isLoading = true;
     this.indexData = route['data']['_value']['content'];
@@ -27,7 +28,6 @@ export class HomePageComponent implements OnInit {
   }
 
   ngOnInit() {
-
     const coverMap: object = {
       0: './assets/covers/ethan-robertson-134952-unsplash-min.jpg',
       1: './assets/covers/michael-mims-111094-unsplash-min.jpg',
@@ -43,7 +43,6 @@ export class HomePageComponent implements OnInit {
       'background-color': 'lightblue'
     };
 
-
     setTimeout( () => this.isLoading = false, 300);
     this.broadcaster.on<string>('SCROLL_TO_ELEMENT')
       .subscribe( (el) => this.scrollToElement(el));
@@ -53,10 +52,14 @@ export class HomePageComponent implements OnInit {
 
     if (el === 'estatesRow') {
       document.getElementById(el).style.paddingTop = '110px';
+      console.log(el);
+    }
+
+    if (el === 'topOfTheWorld') {
+      document.getElementById(el).style.paddingTop = '0px';
+      console.log(el);
     }
 
     document.getElementById(el).scrollIntoView({ block: 'start', behavior: 'smooth' });
-
   }
-
 }
