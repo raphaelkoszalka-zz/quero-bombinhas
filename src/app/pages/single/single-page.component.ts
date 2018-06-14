@@ -18,10 +18,7 @@ export class SinglePageComponent implements OnInit {
 
   constructor(private logger: LoggerService, private http: HttpService, private broadcaster: BroadcasterService,
     private route: ActivatedRoute, private sanitizer: DomSanitizer) {
-
     this.estate = route['data']['_value']['content'];
-    console.log(this.estate);
-
   }
 
   ngOnInit() {

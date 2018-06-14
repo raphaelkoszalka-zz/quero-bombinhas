@@ -12,12 +12,11 @@ import {Router} from "@angular/router";
 export class HeaderHomeComponent  {
 
   public pageScrolled: boolean;
-  private url: string;
+  // @todo: should be using Location service instead of this
+  private url: string = window.location.href;
 
   constructor(private broadcaster: BroadcasterService, private router: Router) {
     this.pageScrolled = false;
-    // @todo: use some angular service instead of JS API window object
-    this.url = window.location.href;
   }
 
   @HostListener('window:scroll', ['$event']) onScrollEvent($event) {
@@ -33,8 +32,14 @@ export class HeaderHomeComponent  {
   }
 
   private otherRoutes(el: string): void {
+
     if (el === 'topOfTheWorld') {
       this.router.navigate(['home']);
+      return;
+    }
+
+    if (el === 'estatesRow') {
+      this.router.navigate(['home'], { queryParams: { goTo: 'imoveis' } });
     }
   }
 
@@ -43,9 +48,7 @@ export class HeaderHomeComponent  {
       this.homeRoute(el);
       return;
     }
-
     this.otherRoutes(el);
-
   }
 
 }
