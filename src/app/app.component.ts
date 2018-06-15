@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -12,4 +12,19 @@ import { Component } from '@angular/core';
   `
 })
 
-export class AppComponent {}
+export class AppComponent implements OnInit {
+
+  private static responsiveAlert(): void {
+    if (window.innerWidth < 1024) {
+      alert('responsiveness not yet implemented')
+    }
+  }
+
+  ngOnInit() {
+    AppComponent.responsiveAlert();
+  }
+
+  @HostListener('window:resize', ['$event']) onScrollEvent($event) {
+    AppComponent.responsiveAlert();
+  }
+}

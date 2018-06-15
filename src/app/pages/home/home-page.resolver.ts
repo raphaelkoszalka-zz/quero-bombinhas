@@ -4,6 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import { Observer } from 'rxjs/Observer';
 import {HttpService} from "../../services/http.service";
 import {AppConstants} from "../../app.constants";
+// @todo: import only observable
 import 'rxjs';
 
 @Injectable()

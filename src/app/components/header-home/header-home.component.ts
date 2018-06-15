@@ -31,30 +31,18 @@ export class HeaderHomeComponent implements OnInit {
     this.url = window.location.href;
   }
 
-  private homeRoute(el: string): void {
-    this.broadcaster.broadcast('SCROLL_TO_ELEMENT', el);
-  }
-
-  private otherRoutes(el: string): void {
-
+  public scrollTo(el: string): void {
     if (el === 'topOfTheWorld') {
-      this.router.navigate(['home']);
+      this.router.navigate(['home'], { queryParams: { goTo: 'top' } });
+      this.broadcaster.broadcast('CHECK_QUERY_ARG', el);
       return;
     }
 
+    // if still here because there will be another conditions at this method
     if (el === 'estatesRow') {
       this.router.navigate(['home'], { queryParams: { goTo: 'imoveis' } });
+      this.broadcaster.broadcast('CHECK_QUERY_ARG', el);
     }
-  }
-
-  public scrollTo(el: string): void {
-    // @todo: fix navigation
-    console.log(this.router);
-    if (/home/.test(this.url)) {
-      this.homeRoute(el);
-      return;
-    }
-    this.otherRoutes(el);
   }
 
 }

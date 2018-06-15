@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../../services/http.service';
 import { BroadcasterService } from '../../services/broadcaster.service';
 import { LoggerService } from '../../services/logger.service';
-import {ActivatedRoute, Params} from "@angular/router";
+import {ActivatedRoute, Params, Router} from "@angular/router";
 
 @Component({
   selector: 'app-home-page',
@@ -16,7 +16,7 @@ export class HomePageComponent implements OnInit {
   public backgroundStyles: object;
   public isLoading: boolean;
 
-  constructor(private logger: LoggerService, private http: HttpService  ,
+  constructor(private logger: LoggerService, private http: HttpService, private router: Router,
               private broadcaster: BroadcasterService, private route: ActivatedRoute) {
     this.isLoading = true;
     this.indexData = route['data']['_value']['content'];
@@ -47,17 +47,25 @@ export class HomePageComponent implements OnInit {
 
     setTimeout( () => {
       this.isLoading = false;
-
-      if (this.route.queryParams['_value']['goTo'] === 'imoveis') {
-        this.scrollToElement('estatesRow');
-      }
-
+      // not proud of this.
+      // @todo: become proud
+      // @todo: utilize angular Location service instead of broadcasting events
+      this.broadcaster.on<string>('CHECK_QUERY_ARG').subscribe( (el) => this.scrollToElement(el, false));
+      this.changeQueryParameterFromCallToAction();
     }, 300);
-
-    this.broadcaster.on<string>('SCROLL_TO_ELEMENT').subscribe( (el) => this.scrollToElement(el));
   }
 
-  public scrollToElement(el): void {
+  public changeQueryParameterFromCallToAction(): void {
+    if (this.route.queryParams['_value']['goTo'] === 'imoveis') {
+      setTimeout( () =>   this.scrollToElement('estatesRow', false), 150);
+    }
+  }
+
+  public scrollToElement(el: string, fromCallToAction): void {
+
+    if (fromCallToAction) {
+      this.router.navigate(['home'], { queryParams: { goTo: 'imoveis' } });
+    }
 
     if (el === 'estatesRow') {
       document.getElementById(el).style.paddingTop = '110px';
@@ -65,11 +73,10 @@ export class HomePageComponent implements OnInit {
 
     if (el === 'topOfTheWorld') {
       document.getElementById(el).style.paddingTop = '0px';
-      console.log(el);
     }
 
     setTimeout( () =>
-      document.getElementById(el).scrollIntoView({ block: 'start', behavior: 'smooth' })
-    , 100);
+        document.getElementById(el).scrollIntoView({ block: 'start', behavior: 'smooth' })
+      , 100);
   }
 }

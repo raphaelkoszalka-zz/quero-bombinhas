@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute, Router} from "@angular/router";
+import {BroadcasterService} from "../../services/broadcaster.service";
 
 @Component({
   selector: 'app-back-to-top',
@@ -7,13 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BackToTopComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router, private broadcaster: BroadcasterService) { }
 
   ngOnInit() {
   }
 
   public goToTop(): void {
-    document.getElementById('topOfTheWorld').scrollIntoView({ block: 'start', behavior: 'smooth' });
+    setTimeout( () =>
+        document.getElementById('topOfTheWorld').scrollIntoView({ block: 'start', behavior: 'smooth' })
+      , 100);
   }
 
 }
