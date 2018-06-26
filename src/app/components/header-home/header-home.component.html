@@ -1,14 +1,13 @@
 <!-- @todo: make this true responsive -->
 
 <section>
-
   <div id="homeHeader" *ngIf="!pageScrolled">
     <div class="col-md-10 col-md-offset-1">
       <div class="row">
         <div class="col-md-3">
           <img id="brand" src="./assets/logo-sem-sombra.png" alt="" (click)="scrollTo('topOfTheWorld')">
         </div>
-        <div class="col-md-9">
+        <div class="col-md-9  hidden-sm hidden-xs">
           <ul id="homeMenu">
             <li class="text-center" style="opacity: 0.5;">
               <h2><i class="fas fa-envelope"></i></h2>
@@ -38,7 +37,7 @@
         <div class="col-md-3">
           <img id="brandFixed" src="./assets/logo-sem-sombra.png" alt="" (click)="scrollTo('topOfTheWorld')">
         </div>
-        <div class="col-md-9">
+        <div class="col-md-9 hidden-sm hidden-xs">
           <ul id="homeMenuFixed">
             <li class="text-center" (click)="scrollTo('contact')" style="opacity: 0.5;">
               <h2><i class="fas fa-envelope"></i></h2>
@@ -61,5 +60,4 @@
       </div>
     </div>
   </div>
-
 </section>
