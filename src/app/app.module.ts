@@ -46,7 +46,7 @@ const routes: Routes = [
     path: 'contato',
     component: ContactPageComponent
   }, {
-    path: 'sobre-nos',
+    path: 'bombinhas',
     component: AboutPageComponent
   }
 ];
