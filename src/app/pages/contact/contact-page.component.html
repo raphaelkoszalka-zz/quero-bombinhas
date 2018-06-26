@@ -1,11 +1,13 @@
-<section id="contactPage">
-  <div class="container">
-    <div class="col-md-4">
-      <ul id="contactDetail">
-        <li>{{address}}</li>
-        <li>{{contactDetail}}</li>
-        <li>{{socialNetwork}}</li>
-      </ul>
-    </div>
+<section>
+  <app-map [lat]="-27.149407" [lng]="-48.489903" [height]="'600px'"></app-map>
+  <div class="col-md-10 col-md-offset-1">
+    <hr>
+    <h1><i class="fas fa-location-arrow"></i> Bombinhas - Santa Catarina</h1>
+    <h3><i class="fas fa-phone-square"></i> +55 47 9 9660 2085</h3>
+    <hr>
+    <h2><i class="fas fa-envelope-square"></i> Envie-nos uma mensagem!</h2>
+    <hr>
+    <app-contact estateCode="0"></app-contact>
+    <hr>
   </div>
 </section>

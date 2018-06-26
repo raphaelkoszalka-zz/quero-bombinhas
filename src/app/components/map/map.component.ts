@@ -16,6 +16,8 @@ export class MapComponent implements AfterViewInit {
   public lng: string;
   @Input()
   public address: string;
+  @Input()
+  public height: string;
 
   constructor() {
   }
@@ -27,8 +29,10 @@ export class MapComponent implements AfterViewInit {
   public renderMap(): void {
 
     const latLng = { lat: parseFloat(this.lat), lng: parseFloat(this.lng) };
+    const mapElm = document.getElementById('map');
+    mapElm.style.height = this.height;
 
-    const map = new google.maps.Map(document.getElementById('map'), {
+    const map = new google.maps.Map(mapElm, {
       center: latLng,
       scrollwheel: false,
       zoom: 17

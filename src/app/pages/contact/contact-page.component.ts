@@ -1,17 +1,18 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-contact-page',
   templateUrl: './contact-page.component.html',
   styleUrls: ['./contact-page.component.css']
 })
-export class ContactPageComponent {
-
-  public address: string;
-  public contactDetail: string;
-  public socialNetwork: string;
+export class ContactPageComponent implements OnInit {
 
   constructor() { }
 
+  ngOnInit() {
+    setTimeout( () =>
+        document.getElementById('topOfTheWorld').scrollIntoView({ block: 'start', behavior: 'smooth' })
+      , 25);
+  }
 
 }
